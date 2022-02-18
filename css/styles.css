@@ -9,18 +9,27 @@
 --background-color-btn:#E5E5E5;
 }
 
-ul {
-    padding: 0;
-    margin: 0;
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p,
+ul,
+ol,
+a {
     margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
 }
 
 body {
@@ -30,6 +39,7 @@ body {
 }
 
 .address-list,
+.nav,
 .features,
 .contacts,
 .list-header,
@@ -38,8 +48,11 @@ body {
 .team-list,
 .gallary-list,
 .list-btn {
-    list-style-type: none;
     font-family: 'Roboto', 'sans-serif';
+}
+
+.section {
+    padding: 94px 0;
 }
 
 .container {
@@ -48,9 +61,30 @@ body {
     padding: 0 15px;
 }
 
+.hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    
+}
+
+.section-title {color: var(--thirty-text-color);
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 1.16;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
 .header {
-    display: flex;
-    justify-content: space-between;
+    display: flex; 
     align-items: center;
     
 }
@@ -88,19 +122,26 @@ body {
 }
 
 .nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-item:not(:last-child){
+    margin-right: 50px;
+    
+}
+
+.nav-link {
     color: var(--thirty-text-color);
+    display: block;
     text-decoration: none;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.2;
     letter-spacing: 0.02em;
+    padding: 32px 0;
 }
-
-.nav-item{
-    margin: 30px 50px;
-    justify-content: space-between;
-}
-
 
 .nav-link:active {
     color:var(--background-color) ;
@@ -115,27 +156,25 @@ body {
 }
 
 .contacts {
-    color: var(--second-text-color);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    font-family: 'Roboto', 'sans-serif';
-    text-decoration: none;
-    font-size: 14px;
-    line-height: 1.2;
+    margin-left: auto;
 }   
 
-.contacts-item:not(:first){
-    margin-left: auto;
+.contacts-item:not(:first-child){
+    margin-left: 50px;
 }
 
 .contacts-link {
+    color: var(--second-text-color);
     font-family: 'Roboto', 'sans-serif';
+    text-decoration: none;
     font-size: 14px;
-    margin-left: 50px;
+    display: block;
     line-height: 1.2;
     letter-spacing: 0.02em;
 }
+
 .contacts-link:hover,
 .contacts-link:focus {
     color: var(--accent-color);
@@ -153,13 +192,13 @@ body {
     font-weight: 900;
     font-size: 44px;
     line-height: 1.35;
-    text-align: center;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    padding: 0;
     max-width: 700px;
-    margin: 0 auto 30px auto;
+    padding: 30px 0;
+    margin: auto;
 }
+
 .btn {
     background-color: var(--accent-color);
     font-family: 'Roboto', 'sans-serif';
@@ -190,7 +229,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 35px;
+    margin-bottom: 50px;
 }
 
 .card {
@@ -198,6 +237,7 @@ body {
     background: #FFFFFF;
     border: 1px solid #EEEEEE;
     box-sizing: border-box;
+    padding: 20px 24px;
 }
 
 .filter-btn:not(:first-child){
@@ -222,15 +262,15 @@ body {
     color: var(--background-color);
 }
 
-.features {
-    margin-bottom: 130px;
-}
+
 
 .features-list {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-top: 40px;
+}
+
+.features-item:not(:first-child) {
+    margin-left: 30px;
 }
 
 .features-item {
@@ -244,6 +284,7 @@ body {
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
 .features-text {
@@ -255,9 +296,8 @@ body {
     text-decoration: none;
 }
 
-.gallery{
-    margin: auto;
-    padding: 0;
+.gallary {
+    padding-top: 0;
 }
 
 .gallery-works{
@@ -277,18 +317,12 @@ body {
     margin-bottom: 50px;
 }
 
-.team{
+.team {
     background-color: var(--section-bg-color);
-    margin-top: 95px;
-    padding-top: 95px;
 }
 
 .team-list {
     display: flex;
-    justify-content:space-between;
-    align-items: center;
-    max-width: 1170px;
-    padding-bottom: 95px;
 }
 
 .team-title {
@@ -297,7 +331,7 @@ body {
     line-height: 1.2;
     text-align: center;
     letter-spacing: 0.03em;
-    margin-bottom: 40px;
+    padding-bottom: 50px ;
 }
 
 .team-item:not(:first-child) {
@@ -311,6 +345,7 @@ body {
     0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
     max-width: 270px;
+    padding: 30px 0;
 }
 
 .author {
@@ -320,7 +355,6 @@ body {
     line-height: 1.2;
     letter-spacing: 0.03em;
     text-align: center;
-    padding-top: 30px;
 }
 
 .position {
@@ -331,15 +365,9 @@ body {
     line-height: 1.2;
     letter-spacing: 0.03em; 
     text-align: center;
-    padding-top: 10px;
-    padding-bottom: 30px;
-    margin: 0;
+    margin-top: 10px;
 }
 
-.gallary-item {
-    text-decoration: none;
-    cursor: pointer;
-}
 
 .gallary-list {
     display: flex;
@@ -347,14 +375,6 @@ body {
     justify-content: space-between;
 }
 
-.gallary-project {
-    color: var(--thirty-text-color);
-    font-size: 18px;
-    font-weight: 700; 
-    line-height: 2;
-    letter-spacing: 0.06em;
-    margin-top: 130px;
-}
 
 .title-project {
     color: var(--thirty-text-color);
@@ -362,10 +382,10 @@ body {
     font-weight: 700; 
     line-height: 2;
     letter-spacing: 0.06em;
-    margin: 20px 24px 4px 24px;
+    margin-bottom: 4px;
 }
 
-.gallary-title-card {
+.gallary-title-card:not(:nth-child(n+7)) {
     margin-bottom: 30px;
 }
 
@@ -375,27 +395,34 @@ body {
     font-weight:400;
     line-height: 1.9;
     letter-spacing: 0.03em;
-    margin: 4px 24px 20px 24px;
+    margin-bottom: 4px;
 }
 
 .page-footer {
     background-color: var(--title-bg-color);
-    padding: 60px;
+    padding: 60px 0;
 }
 
 .logo-footer {
     font-family: 'Raleway';
     color: var(--background-color);
+    font-size: 26px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+}
+
+.address {
+    margin-top: 20px;
 }
 
 .address-list {
     font-size: 14px;
     line-height: 1.71;
     letter-spacing: 0.03em;
-    margin-top: 10px;
 }   
 
-.address {
+.address-link {
     font-size: 14px;
     line-height: 1.7;
     font-style: normal;
@@ -405,12 +432,14 @@ body {
 }
 
 .contacts-footer {
-    font-size: 14px;
-    line-height: 1.71;
-    letter-spacing: 0.03em;
+    color: var(--second-text-color);
+    font-family: 'Roboto', 'sans-serif';
     text-decoration: none;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
 }
 
-.footer-items {
-    margin-top: 10px;
+.footer-items:not(:first-child) {
+    margin-top: 9px;
 }
